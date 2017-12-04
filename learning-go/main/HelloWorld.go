@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"runtime"
 )
 //or
 //import "fmt"
@@ -35,4 +36,36 @@ func main() {
 
 	const hello = "Hello"
 	fmt.Println(hello)
+
+	n := 0
+	for i := 1; i < 20; i++ {
+		n = n + i
+	}
+	fmt.Println(n)
+
+	n = 0
+	for ; n < 10; {
+		n = n + 1
+	}
+	fmt.Println(n)
+
+	if n < 0 {
+
+	} else if n == 0 {
+
+	} else {
+
+	}
+
+	if t := 10; t < n {
+
+	}
+
+	switch os := runtime.GOOS; os {
+	    case "windows":
+		fmt.Println(os)
+	    default:
+		fmt.Println(os)
+
+	}
 }
