@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"runtime"
+	"time"
 )
 //or
 //import "fmt"
@@ -68,4 +69,21 @@ func main() {
 		fmt.Println(os)
 
 	}
+	t := time.Now()
+	switch  {
+	case t.Hour() < 12:
+		fmt.Println("Morning")
+	case t.Hour() < 17:
+		fmt.Println("Afternoon")
+	default:
+		fmt.Println("Evening")
+	}
+	inner()
+}
+
+func inner() {
+	defer fmt.Println("!")
+	defer fmt.Println("World")
+	defer fmt.Println("?")
+	fmt.Println("Hello")
 }
