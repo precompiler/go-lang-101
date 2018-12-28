@@ -44,4 +44,22 @@ func main() {
 	addr2 := &num2[0]
 	fmt.Println(&num2, &num1, addr1, addr2)
 
+	var stringArray []string = make([]string, 2)
+	stringArray[0] = "a"
+	stringArray[1] = "b"
+	printStringArray(&stringArray)
+
+	var stringPointerArray []*string = make([]*string, 2) //array of string pointers
+	msg := "Hello"
+	stringPointerArray[0] = &msg
+	fmt.Println(*stringPointerArray[0])
+
+}
+
+func printStringArray(strings *[]string) { // a pointer pointed to a string slice
+	fmt.Println("=======")
+	for _, item := range *strings {
+		fmt.Println(item)
+	}
+	fmt.Println("=======")
 }
