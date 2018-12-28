@@ -59,7 +59,7 @@ func main() {
 func printStringArray(strings *[]string) { // a pointer pointed to a string slice
 	fmt.Println("=======")
 	for _, item := range *strings {
-		fmt.Println(item) //
+		fmt.Println(item)
 	}
 	fmt.Println("=======")
 }
