@@ -54,6 +54,20 @@ func main() {
 	stringPointerArray[0] = &msg
 	fmt.Println(*stringPointerArray[0])
 
+	dict := make(map[string]int)
+	dict["one"] = 1
+	dict["two"] = 2
+	for key, val := range dict {
+		fmt.Println(key, ":", val)
+	}
+
+	dict = map[string]int{"three": 3, "four": 4}
+
+	val, exists := dict["five"]
+	fmt.Println(exists, val)
+	contact := map[string]Address{"Scott": Address{Country: "USA", City: "NY", Street: "Main Street"}}
+	contact["Tiger"] = Address{Country: "Ireland", City: "Dublin", Street: "Abbey Street"}
+	printAddressInfo(&contact)
 }
 
 func printStringArray(strings *[]string) { // a pointer pointed to a string slice
@@ -62,4 +76,16 @@ func printStringArray(strings *[]string) { // a pointer pointed to a string slic
 		fmt.Println(item)
 	}
 	fmt.Println("=======")
+}
+
+func printAddressInfo(contacts *map[string]Address) {
+	for key, val := range *contacts {
+		fmt.Println("name: ", key, ";address", val)
+	}
+}
+
+type Address struct {
+	Country string
+	City    string
+	Street  string
 }
